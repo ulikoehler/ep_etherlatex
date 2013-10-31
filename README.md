@@ -22,4 +22,4 @@ Please submit GitHub Pull Requests and/or Issues!
 
 ## License
 
-ep_etherlatex is released under Apache License v2.0.
+ep_etherlatex is released under [Apache License v2](http://www.apache.org/licenses/LICENSE-2.0.html), just like etherpad lite itself.
