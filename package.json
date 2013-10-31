@@ -1,0 +1,11 @@
+{
+  "name": "ep_etherlatex",
+  "description": "Server-side PDFLaTeX compiler for EtherPad Lite",
+  "version": "0.0.1",
+  "author":"Uli Köhler <ukoehler@techoverflow.net>",
+  "dependencies": {
+	"rimraf":"2.2.2",
+    "temp":"0.6.0"
+  },
+  "engines": { "node": ">= 0.8" }
+}

@@ -1,0 +1,4 @@
+*.py
+**/*.kate-swp
+node_modules
+.ep_initialized
