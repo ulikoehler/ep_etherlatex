@@ -41,17 +41,20 @@ function getPDFHandler(req, res) {
                 if(err2) {
                     return console.log("Error while writing LaTeX file: " + err2);
                 }
-                //Execute pdflatex
+                //Execute pdflatex TWICE
                 var pdflatex = spawn("pdflatex",["-interaction=batchmode", texFilename], {cwd: tempDir});
                 pdflatex.on('close', function (code, signal) {
-                    //Serve PDF if it exists, else serve log file
-                    fs.exists(pdfFilename, function(pdfFileExists){
-                        if(pdfFileExists) {
-                            serveFileAndDelete(res, tempDir, pdfFilename, "application/pdf");
-                        } else { //PDF file does not exist
-                            serveFileAndDelete(res, tempDir, logFilename, "text/plain");
-                        }
-                    });
+                    var pdflatex2 = spawn("pdflatex",["-interaction=batchmode", texFilename], {cwd: tempDir});
+                    pdflatex2.on('close', function (code, signal) {
+                        //Serve PDF if it exists, else serve log file
+                        fs.exists(pdfFilename, function(pdfFileExists){
+                            if(pdfFileExists) {
+                                serveFileAndDelete(res, tempDir, pdfFilename, "application/pdf");
+                            } else { //PDF file does not exist
+                                serveFileAndDelete(res, tempDir, logFilename, "text/plain");
+                            }
+                        });
+                   });
                 });
             });
         });
