@@ -7,6 +7,23 @@ ep_etherlatex adds a button to the right menubar (you won't miss it!). When you 
 
 Currently the plugin assumes you have a working *pdflatex* installation on the etherpad server, which is in the *PATH* and can be executed by the user running etherpad. For each compilation, a temporary directory is created, and immediately deleted after sending back the results to the user.
 
+## Installation
+
+Ensure etherpad-lite is installed and running before installing *ep_etherlatex*!
+
+To install, execute `git clone https://github.com/ulikoehler/ep_etherlatex.git` in the `node_modules` subdirectory of your etherpad lite installation directory.
+
+After that, you need to install some dependencies for *ep_etherlatex* itself. In order to do this, execute `npm install` inside the cloned `ep_etherlatex` directory.
+
+The overall workflow could look like this:
+```bash
+cd $EPLITE_HOME
+cd node_modules
+git clone https://github.com/ulikoehler/ep_etherlatex.git
+cd ep_etherlatex
+npm install
+```
+
 ## Related projects
 
 Also take a look at [ep_latex](https://github.com/manuels/ep_latex) which uses [texlive.js](https://github.com/manuels/texlive.js) , an [emscripten](https://github.com/kripken/emscripten)-compiled version of [TeXLive](http://texlive.org). As noted on the texlive.js website, there are only three TeX packages supported -- in my tests, this has proven to be a huge limitation -- additionally, the compilation speed is quite slow.
