@@ -4,8 +4,8 @@
   "version": "0.0.1",
   "author":"Uli Köhler <ukoehler@techoverflow.net>",
   "dependencies": {
-	"rimraf":"2.2.2",
-    "temp":"0.6.0"
+	"rimraf":"2.2.8",
+    "temp":"0.8.0"
   },
   "engines": { "node": ">= 0.8" }
 }
